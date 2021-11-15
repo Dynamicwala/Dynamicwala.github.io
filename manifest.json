@@ -1,16 +1,16 @@
 {
-    "background_color": "#ffffff",
-    "dir": "ltr",
-    "display": "standalone",
-    "name": "Know more",
-    "orientation": "any",
-    "scope": "/",
-    "short_name": "Know more",
-    "start_url": "index.html",
-    "theme_color": "#ffffff",
-    "icons": [
-            "src": "/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-    ]
+	"background_color": "#ffffff",
+	"dir": "ltr",
+	"display": "standalone",
+	"name": "Know more",
+	"orientation": "any",
+	"scope": "/",
+	"short_name": "Know more",
+	"start_url": "index.html",
+	"theme_color": "#ffffff",
+	"icons": [{
+		"src": "/icons/icon-512x512.png",
+		"sizes": "512x512",
+		"type": "image/png"
+	}]
 }
