@@ -10,7 +10,7 @@
     "theme_color": "#ffffff",
     "icons": [
         {
-            "src": "https://dynamicwala.github.io/Know-more/images/app-icon-512x512.png",
+            "src": "/images/app-icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
