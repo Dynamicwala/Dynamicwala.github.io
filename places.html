@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="manifest" href="manifest.json" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.muicss.com/mui-0.10.3/css/mui.css" />
+	<script src="https://cdn.muicss.com/mui-0.10.3/js/mui.js"></script>
+	<!-- google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<!-- google fonts over -->
+	<meta charset="utf-8">
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+		font-family: 'Poppins', sans-serif;
+		user-select: none;
+	}
+	
+	body {
+		height: 100%;
+		position: relative;
+	}
+	
+	.cent {
+		transform: translateY(50%);
+		margin-left: 10px;
+	}
+	
+	.mui-appbar {
+		position: fixed;
+		width: 100%;
+		z-index: 100;
+		top: 0;
+		background: #fff;
+		color: #000;
+	}
+	
+	.box {
+		border-radius: 20px;
+		background: red;
+		width: 150px;
+		height: 70px;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		min-height: 100px;
+		background-image: linear-gradient(to right top, #ff62fc, #e24ee6, #c53ad1, #a923bc, #8e04a7);
+		margin: 10px;
+		margin-bottom: 40px;
+	}
+	
+	.image img {
+		position: absolute;
+		width: 70px;
+		height: 70px;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		border-radius: 100%;
+		top: 0;
+	}
+	
+	.infoshower {
+		position: absolute;
+		z-index: 15;
+		background: #fff;
+		height: 300vh;
+		width: 100%;
+		background: #fff;
+		margin-top: -150px;
+		display: none;
+	}
+	
+	.container {
+		margin-top: 100px;
+		margin-left: 10px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.infoimg {
+		width: 100%;
+		margin-top: 100px;
+	}
+	
+	.info {
+		margin: 10px;
+		line-height: 25px;
+	}
+	
+	.whitescreen {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #fff;
+		z-index: 10;
+		margin-top: -100px;
+		display: none;
+	}
+	
+	.caption {
+		font-size: 10px;
+		color: gray;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	
+	#apnaframe {
+		width: 100%;
+		position: fixed;
+		z-index: 20;
+		height: 100vh;
+		margin-top: -100px;
+		display: none;
+	}
+	
+	.closebtn {
+		position: absolute;
+		top: 0;
+		background: #fff;
+		display: none;
+		width: 100%;
+		margin-top: -15px;
+	}
+	</style>
+	<title>Famous People</title>
+</head>
+
+<body>
+	<iframe src="" allow="fullscreen" id="apnaframe" frameborder="0"></iframe>
+	<div class="infoshower" id="infoshower"> <img class="infoimg" id="infoimg" src="" onclick="openframe()" alt="">
+		<div class="caption"><i class="bi bi-info-circle"></i> Click on image to view 360 image</div>
+		<div class="info" id="info"> </div>
+	</div>
+	<div class="whitescreen"></div>
+	<div class="mui-appbar">
+		<div class="mui--text-title cent" onclick="goBack()"><i class="bi bi-chevron-left"></i> </div>
+		<div class="mui--text-title cent" onclick="hider()">
+			<div class="closebtn" id="closebtn"><i class="bi bi-x-lg"></i></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="box" id="myDIV" onclick="one()">
+			<center>
+				<div class="image"><img src="tajmahal.webp" alt="image"></div>
+				<div class="name">Taj mahal</div>
+			</center>
+		</div>
+		<div class="box" onclick="two()">
+			<center>
+				<div class="image"><img src="https://images.news18.com/ibnlive/uploads/2021/10/statue-of-unity-16355930914x3.jpg" alt="image"></div>
+				<div class="name">Statue of Unity</div>
+			</center>
+		</div>
+		<div class="box" onclick="three()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Agra-Fort-Uttar-Pradesh.jpg" alt="image"></div>
+				<div class="name">Agra Fort</div>
+			</center>
+		</div>
+		<div class="box" onclick="four()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Qutub-Minar-Delhi.jpg" alt="image"></div>
+				<div class="name">Qutub Minar</div>
+			</center>
+		</div>
+		<div class="box" onclick="five()">
+			<center>
+				<div class="image"><img src="https://assets.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Humayun%E2%80%99s-Tomb-Delhi.jpg" alt="image"></div>
+				<div class="name">Humayun's Tomb</div>
+			</center>
+		</div>
+		<div class="box" onclick="six()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Hawa-Mahal-Jaipur.jpg" alt="image"></div>
+				<div class="name">Hawa Mahal</div>
+			</center>
+		</div>
+		<div class="box" onclick="seven()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Fatehpuri-Sikri-Uttar-Pradesh1.jpg" alt="image"></div>
+				<div class="name">Fatehpuri Sikri</div>
+			</center>
+		</div>
+		<div class="box" onclick="eight()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Khajuraho-Temples-Madhya-Pradesh.jpg" alt="image"></div>
+				<div class="name">Khajuraho Temples</div>
+			</center>
+		</div>
+		<div class="box" onclick="nine()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Sanchi-Stupa-Madhya-Pradesh.jpg" alt="image"></div>
+				<div class="name">Sanchi Stupa</div>
+			</center>
+		</div>
+		<div class="box" onclick="ten()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Konark-Temple-Odisha.jpg" alt="image"></div>
+				<div class="name">Konark Temple</div>
+			</center>
+		</div>
+		<div class="box" onclick="eleven()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Mahabodhi-Temple-Bodh-Gaya.jpg" alt="image"></div>
+				<div class="name">Mahabodhi Temple</div>
+			</center>
+		</div>
+		<div class="box" onclick="twelve()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Rani-ki-Vav-Gujarat.jpg" alt="image"></div>
+				<div class="name">Rani ki Vav</div>
+			</center>
+		</div>
+		<div class="box" onclick="thirteen()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2020/06/Victoria-Memorial.jpg" alt="image"></div>
+				<div class="name">Victoria Memorial</div>
+			</center>
+		</div>
+		<div class="box" onclick="fourteen()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Jallianwala-Bagh.jpg" alt="image"></div>
+				<div class="name">Jallianwala Bagh</div>
+			</center>
+		</div>
+		<div class="box" onclick="fiveteen()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Gwalior-Fort.jpg" alt="image"></div>
+				<div class="name">Gwalior Fort</div>
+			</center>
+		</div>
+		<div class="box" onclick="sixteen()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Golden-Temple.jpg" alt="image"></div>
+				<div class="name">Golden Temple</div>
+			</center>
+		</div>
+		<div class="box" onclick="seventeen()">
+			<center>
+				<div class="image"><img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/India-Gate.jpeg" alt="image"></div>
+				<div class="name">India Gate</div>
+			</center>
+		</div>
+	</div>
+	<script>
+	function topFunction() {
+		document.body.scrollTop = 0; // For Safari
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		document.getElementById("closebtn").style.display = "block";
+	}
+
+	function openframe() {
+		topFunction();
+		document.getElementById("apnaframe").style.display = "block";
+	}
+	localStorage.clear()
+
+	function goBack() {
+		window.location.replace("index.html");
+	}
+
+	function hider() {
+		document.getElementById("infoshower").style.display = "none";
+		document.getElementById("apnaframe").style.display = "none";
+		document.getElementById("closebtn").style.display = "none";
+	}
+
+	function one() {
+		var content = `
+
+Discover Red Fort in Delhi which is one of the famous places in India. Meet the boss of Indian historical places. If you consider the top 10 historical places in India, Taj Mahal will always be ranking high in the list. Explore the ultimate epitome of love, the Taj Mahal, whose grandeur remains unmatched in history and today this is one of the weekend getaways from Delhi. This opulent white marble structure was commissioned to be built in 1632 by Shah Jahan for his late wife Mumtaz Mahal. It took around 22 years to complete this magnificent structure that is considered one of the most famous historical places in India.
+
+According to local legend, it was believed that Shah Jahan cut off the hands of all the workers who built the Taj Mahal so that a similar monument could not be built.
+
+Interesting fact: A shopping complex and hotel inspired by the Taj Mahal is being constructed in Dubai and is estimated to be four times larger in size.
+<li>Entry fee: Indians- INR 40
+<li>Foreigners- INR 1000
+<li>No entry for children below 15 years of age
+<li>Open from: 30 Minutes before sunrise and closes 30 Minutes before sunset
+<li>Must see: Nighttime shows of the Taj Mahal
+<li>Built By: Shah Jahan
+<li>Built In: 1648
+
+ `;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "tajmahal.webp";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/d8907f744f104058b2c2486d4cbca588?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+		topFunction();
+	}
+
+	function two() {
+		topFunction();
+		var content = `Kunwar Singh (13 November 1777 – 26 April 1858; also known as Babu Kunwar Singh and Kuer Singh) was a leader during the Indian Rebellion of 1857. He belonged to a family of the Ujjainiya clan of the Parmar Rajputs of Jagdispur, currently a part of Bhojpur district, Bihar, India. At the age of 80, he led a selected band of armed soldiers against the troops under the command of the British East India Company. He was the chief organiser of the fight against the British in Bihar. He is popularly known as Veer Kunwar Singh or Veer Babu Kunwar Singh`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://images.news18.com/ibnlive/uploads/2021/10/statue-of-unity-16355930914x3.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/0b118776818949d1b7b256fdd647e51d?utm_campaign=embed&utm_source=other&heading=367.39&pitch=31.94&field-of-view=75&size=medium";
+	}
+
+	function three() {
+		topFunction();
+		var content = `
+
+To get a sense of the rich history of the Mughal era, visit the walled palatial Agra Fort, one of the famous historical places in India that is built entirely of red sandstone. Built in 1565 by Akbar, this historical tourist place in India has two ornately designed gates: the Amar Singh Gate and the Delhi Gate. You can only enter through the Amar Singh Gate to uncover an ancient city filled with gateways, courts, passages, palaces and mosques. It is one of the most beautiful places to visit in Agra.
+
+Interesting fact: This fort was included in one of Sherlock Holmes’ cases: the “Sign of the Four” and was also the location for the movie Jodha Akbar.
+Entry fee: Indians- INR 40
+Foreigners- INR 550
+Open from: 6 am to 6 pm
+Must see: Jahangir Palace, Nagina Masjid, Moti Masjid, Mina Masjid and Zenana Mina Bazaar.
+Built By: Akbar and Shah Jahan
+Built In: 1573
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Agra-Fort-Uttar-Pradesh.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/321301ee18c54ab6811b06b18ac77cc8?utm_campaign=embed&utm_source=other&heading=130.9&pitch=-1.2&field-of-view=75&size=medium";
+	}
+
+	function four() {
+		topFunction();
+		var content = `
+
+Regarded as the site of the first Muslim kingdom in northern India, the Qutub Minar is definitely one of the most historical sites in India. It is one of the finest examples of Indo-Muslim architecture with its intricate red sandstone storeys. These are dotted with carvings and verses from the Quran and are mostly in Arabic and Nagari. Qutub Minar is one of the famous historical places in India and is said to have got its name from Qutb-ud-din Aibak who was the first Muslim ruler of North India. The first mosque in India Quwwat-ul-Islam Masjid is also located at the foot of the Qutub Minar.
+
+Interesting fact: The Qutub Minar complex has an iron pillar that has not rusted even after 2000 years.
+Entry fee: Indians- INR 10
+Foreigners- INR 250
+Open from: 7 am to 5 pm
+Must see: The Decorative Light Show held every evening from 6:30 to 8 pm and the Qutub Minar Festival that is held in October/November.
+Built By: Qitub-ud-Din Aibak
+Built In: 1193
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Qutub-Minar-Delhi.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/b0264c70c3bb40daaa7fc6f5704cfeff?utm_campaign=embed&utm_source=other&heading=1.59&pitch=32.57&field-of-view=75&size=medium";
+	}
+
+	function five() {
+		topFunction();
+		var content = `
+
+A beautiful synthesis of Indian and Persian architecture, Humayun’s Tomb is one of the most famous and important places in India. Humayun’s wife Hamida Banu Begum commissioned the building of this tomb for her husband in the 15th century. Arched alcoves, beautiful domes, elaborate corridors and kiosks – all make this monument a grandeur of Indian architecture. There is also a barber’s tomb at the southwestern side of the main tomb. It is one of the most famous tourist places in Delhi that one should certainly visit.
+
+Interesting fact: Humayun’s Tomb was one of the main inspirations for the Taj Mahal.
+Entry fee: Indians- INR 40
+Foreigners- INR 510
+Open from: 7 am to 7 pm (Closed on Fridays)
+Must see:‘The Dormitory of the Mughals’ that has over 100 tombs of the Mughal emperors.
+Built By: Mirak Mirza Ghiyath
+Built In: 1572
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://assets.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Humayun%E2%80%99s-Tomb-Delhi.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/3588da4216414e2c909be1895aa5d8d0?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function six() {
+		topFunction();
+		var content = `
+
+The ‘Palace of Winds’ or Hawa Mahal gets its name due to the fact that it looks like a honeycomb of a beehive with its 953 intricate windows. It is also shaped like a crown as the ruler who built it, Maharaja Sawai Pratap Singh, was a major devotee of Lord Krishna. One of the popular tourist places in Jaipur, this palace is known as the tallest building in the world that doesn’t have any foundation. The palace is curved but still stands firm due to its pyramidal shape.
+
+Interesting fact: It was believed that this building was created so that the royal ladies could look outside as they were constantly under ‘purdah’
+Entry fee: Indians- INR 10
+Foreigners- INR 50
+Open from: 9.30 am to 4.30 pm
+Must see: The intricate lattice work on the tiny windows.
+Built By: Pratap Singh
+Built In: 1799
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Hawa-Mahal-Jaipur.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/fb071567956e4875a54d574aaaee5f97?utm_campaign=embed&utm_source=other&heading=3&pitch=12&field-of-view=75&size=medium";
+	}
+
+	function seven() {
+		topFunction();
+		var content = `
+
+The royal city of Fatehpur Sikri was once the capital of the Mughal era during Akbar’s reign. This royal city is one of the historical tourist places in India and once had palaces, public buildings, mosques, quarters for the king, the army as well as the servants. Further, the well planned royal city with carved columns and decorated pillars was built between 1571-1573 AD and abandoned due to a shortage of water.
+
+Interesting fact: Many barren women would come to the tomb of the Sufi saint Salim Chisti to pray for children.
+Entry fee: Indians- INR 40
+Foreigners- INR 510
+Open from: 6 am to 6 pm (Closed on Fridays)
+Must see: Diwan-i-Aam and the Diwan-i-Khas
+Built By: Akbar
+Built In: 1569
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Fatehpuri-Sikri-Uttar-Pradesh1.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/11c181c8847946cf8d507d0e89cc323b?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function eight() {
+		topFunction();
+		var content = `
+
+Khajuraho has always been thought of as the place that exemplifies sensuality and eroticism at its best. However this is a misrepresentation as only about 10 percent of the sculptures are sensual and the rest are common depictions. Countless sculptures depicting love, eternal grace, beauty, delicacy and the creative arts can be seen in one of the most historical places in India. A perfect amalgamation of Hinduism and Jainism, Khajuraho temples have carvings of cult icons, demi gods and Apsaras.
+
+Interesting fact: The city got its name as it was adorned with date palms and “Khajura’ means date palms in Hindi. It was also often called Khajjurpura in ancient times.
+Entry fee: Indians- INR 10
+Foreigners- INR 250 (only for the western temples, rest are free)
+Open from: 8 am to 6 pm
+Must see: The Sound and Light Show that portrays the tale of the Chandela dynasty.
+Built By: Chandela dynasty
+Built In: Between 950 AD and 1050 AD
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Khajuraho-Temples-Madhya-Pradesh.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/33ce1867fa5345c28a37821cca0847af?utm_campaign=embed&utm_source=other&heading=3.49&pitch=10.23&field-of-view=75&size=medium";
+	}
+
+	function nine() {
+		topFunction();
+		var content = `
+
+Unearth one of the most religious centers of Buddhism at the Sanchi Stupa that houses relics of the Buddha. This famous historical place in India was built by Lord Asoka in the 3rd century B.C for Emperor Ashoka. The Dome of the Stupa signifies the wheel of law and this stupa is actually considered as a symbol of Buddha’s freedom the circle of life and death (Moksha). The four gateways of the Stupa have various scenes from the Jataka tales and stories of Buddha’s life.
+
+Interesting fact: The relics of Buddha were painted with a Mauryan polish to make them glow like glass.
+Entry fee: Indians- INR 10
+Foreigners- INR 250
+Open from: 8.30 am to 5 pm
+Must see: The Ashoka pillar has four lions and is designed in a Greco-Buddhist style. It is also the national emblem of India.
+Built By: Emperor Ashoka
+Built In: 3rd century BCE
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Sanchi-Stupa-Madhya-Pradesh.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/946bd3def9f44ca6b5e388381098feac?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function ten() {
+		topFunction();
+		var content = `
+
+Built by the great ruler of the Ganga dynasty – King Narasimhadeva I, along with 1200 artisans, the Konark Temple is magic set in stone. Located on the coast of the Bay of Bengal, this temple signifies the exquisite detailing of ancient architecture and is one of the famous historical places in India. A particularly interesting feat is at the entrance of the temple where two lions are shown crushing elephants and a human body lies at the foot of the elephant.
+
+Interesting fact: The 12 wheels at the base of the temple are sundials that accurately denote time.
+Entry fee: Indians- INR 10
+Foreigners- INR 250
+There is no entrance fee on Fridays.
+Open from: 10 am to 5 pm ( Closed on Fridays)
+Must see: The three statues of the sun gods where the sun’s rays fall at dawn, noon and sunset.
+Built By: Raja Narasinghs Deva I
+Built In: 13th century BCE
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Konark-Temple-Odisha.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/16422301f74242c59b6886470b57b059?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function eleven() {
+		topFunction();
+		var content = `
+
+Visit the Mahabodhi temples that are one of the four holy grounds of Buddhism. This is the spot where the Buddha is said to have attained enlightenment while meditating under a fig tree. The Bodhi tree is the descendant of the Fig tree and lies just near the temple. The earliest temple was built by Ashoka in the 3rd century BC. The temple has a massive statue of Buddha touching the earth with this right hand.
+
+Interesting fact: The Bodhimanda is the spot under the Bodhi tree where the Buddha attained enlightenment. It is believed that this spot will be the last to disappear when the world ends and the first to reappear when the world is recreated.
+Entry fee: None
+Open from: 5 am to 9 pm
+Must see: The Jewel Walk here is the spot where the Buddha is said to have gone on a seven days walking meditation after he was enlightened.
+Built By: Emperor Ashoka
+Built In: 3rd century BCE
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Mahabodhi-Temple-Bodh-Gaya.jpg";
+		document.getElementById("info").innerHTML = content;
+	}
+	document.getElementById("apnaframe").src = "https://momento360.com/e/u/88c489051e014f58800d6b7e930e9946?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+
+	function twelve() {
+		topFunction();
+		var content = `
+
+You will feel like an ant climbing down an anthill when you explore the Rani ki Vav stepwell as it is a massive structure that is around 24 meters deep. One of the most unexplored historical places in India, this stepwell was built in the 11th century AD, as a memoriam for King Bhimdev of the Solanki dynasty by his wife Queen Udayamati. The lowest level of the stepwell was earlier used as a route to escape to neighbouring villages. It is one of the most beautiful places to visit in Gujarat.
+
+Interesting fact: The central level has the theme “Dasavatars” which means 10 incarnations of Vishnu, and that when you approach the water level there will be a sculpture of Vishnu reclining on a thousand snake heads.
+Entry fee: Indians- INR 5
+Foreigners- INR 135
+Open from: 8 am to 6 pm
+Must see: The excellently carved sculptures of Yokinis, Apsaras and Nakakanyas in the seven galleries.
+Built By: Udayamati
+Built In: 11th century AD
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Rani-ki-Vav-Gujarat.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/b1d0c98f0f9043f29948dc41a737e84d?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function thirteen() {
+		topFunction();
+		var content = `
+
+The Victoria Memorial in Kolkata is one of the most historical tourist places in India and was built during the peak of the British era in India. The then Viceroy Lord Curzon laid down the idea of this monument but its actual design was done by Sir William Emerson.
+
+Multitudes of lush gardens, a museum filled with British memorabilia including weapons, paintings, sculptures, artifacts etc and royal portrait of the Queen are what you will find in this beautiful monument. One of the best paintings you will find here is the one by Russian artist Vasili Verestchagin. This painting depicts the Prince of Wales in Jaipur in 1876.
+
+Interesting fact: There are two sets of mysterious inscriptions on the monument. One is “VRI” which means Victoria Regina Imperatrix and the other is “Dieu Et Mon Droit”. The first means Victoria Queen and Empress and the latter means “God and my right”.
+Entry fee: Indians- INR 20
+Foreigners- INR 200
+Open from: 5:30 am to 6:15 pm daily
+Must see: The black bronze statue “Angel of Victory” that lies on the apex of the memorial’s dome. In favorable weather, it also acts as a weathercock.
+Built By: Lord Curzon
+Built In: 1921
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2020/06/Victoria-Memorial.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/065be5f4af8f4749b6ca2966212e83a7?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function fourteen() {
+		topFunction();
+		var content = `
+
+The infamous Jallianwala Bagh massacre took place near this monument near the Golden Temple in Amritsar. Covering around 6.5 acres, it is the place where General Dyer ordered a mass shooting on Baisakhi. Thousands of innocents succumbed to death in this incident. It was one of the incidents that ignited the fire of Independence revolution. A memorial was erected here on 13th April 1961 by the then president, Dr. Rajendra Prasad.
+
+Interesting fact: Infamous Jallianwala Bagh Massacre took place here
+Entry fee: Free
+Open from: 6:30 am to 7:30 pm
+Must see: The step well that took the centre stage during the massacre.
+Built By: Benjamin Polk (memorial)
+Built In: 1961 (memorial)
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Jallianwala-Bagh.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/4f5f2f02634842009d0220b55df66878?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function fiveteen() {
+		topFunction();
+		var content = `
+
+A legendary fort of its time, Gwalior Fort has been around for a long time. Some sources suggest that it was constructed in or before 6 century Mughal Emporer Babur described this place to be a pearl among Indian fortresses. The second oldest reference to the number zero can be found here. Situated in the historic city of Gwalior, it is the part of the identity of the city that has seen many dynasties come and go.
+
+Interesting fact: Second oldest reference to number zero is carved here, it was constructed in the 6th century.
+Entry fee: INR 75/adult; free for those below 15
+Open from: 6:00 am to 5:30 pm
+Must see: Man Mandir, Gujari Palace, Jahangir Palace, and the Karan Palace
+Built By: Man Singh Tomar
+Built In: 3rd century BCE (later developed into the fort it is today)
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Gwalior-Fort.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/6e5fc65d4e9341c7ba89a5fdfd6400ae?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function sixteen() {
+		topFunction();
+		var content = `
+
+One of the most famous Gurudwara in the entire world, Sri Harmandir Sahib is one of the important spiritual places in India. While it has been around for a long while, it was rebuilt with pure gold and marble in 1830 by Maharaja Ranjit Singh. Located in the heart of Amritsar, it is visited by more than a hundred thousand pilgrims every day.
+
+Interesting fact: Each day, over a hundred thousand people partake the Langar here
+Entry fee: Free
+Open from: Changes every month
+Must see: Amrit Sarovar, Ramgarhia Bunga
+Built By: Guru Ra
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/Golden-Temple.jpg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/da277740d99346b8b1c0f21501fd06c3?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium";
+	}
+
+	function seventeen() {
+		topFunction();
+		var content = `
+
+This 42-meter monument is often compared with Arch de Triomphe in Paris and Arch of Constantine in Rome. Located on the Rajpath, it was designed by Edwin Lutyens. Dedicated to the 82,000 soldiers of both Indian and British descent who fought in World War One and 13,300 soldiers who were martyred in the 3rd Anglo-Afghan War, it was built in 1931. Every year, the Republic Day Parade is held here. It is a famous destination among both locals and tourists.
+
+Interesting fact: Dedicated to nearly 1 lakh soldiers who perished in two wars, namely WW I and Third Anglo-Afghan War. It is the spot where Amar Jawan Jyoti – the eternal flame- continues to burn.
+Entry fee: Free
+Open from: All the time
+Must see: Amar Jawan Jyoti, Children’s Park
+Built By: Edwin Lutyens
+Built In: 1921
+
+`;
+		document.getElementById("infoshower").style.display = "block";
+		document.getElementById("infoimg").src = "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/02/India-Gate.jpeg";
+		document.getElementById("info").innerHTML = content;
+		document.getElementById("apnaframe").src = "https://momento360.com/e/u/2e0c4b6b7f3c467b9fa0e7a8e269730b?utm_campaign=embed&utm_source=other&heading=2.7&pitch=2.2&field-of-view=75&size=medium";
+	}
+	</script>
+<script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
+</body>
+
+</html>

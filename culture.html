@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="manifest.json" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.muicss.com/mui-0.10.3/css/mui.css" />
+  <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.js"></script>
+  
+<!-- google fonts -->
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+
+<!-- google fonts over -->
+  <meta charset="utf-8">
+
+
+
+
+  <style>
+
+  *{
+  	padding: 0;
+  	margin: 0;
+  	font-family: 'Poppins', sans-serif;
+  	user-select: none;
+  }
+  body{
+  	height: 100%;
+  	position: relative;
+  }
+  	.cent {
+    transform: translateY(50%);
+    margin-left: 10px;
+  }
+  
+  .mui-appbar {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    background: #fff;
+    color: #000;
+  }
+.box{
+	border-radius: 20px;
+	background: red;
+	width: 150px;
+	height: 70px;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	min-height: 100px;
+	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	margin: 10px;
+	margin-bottom: 40px;
+}
+.image img{
+	position: absolute;
+	width:70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+	border-radius: 100%;
+	top: 0;
+}
+  .infoshower{
+	position: absolute;
+	z-index: 100;
+	background: #fff;
+	height: 300vh;
+	width: 100%;
+	background: #fff;
+	margin-top: -150px;
+	display: none;
+}
+.container{
+	margin-top: 100px;
+	margin-left: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.infoimg{
+	width: 100%;
+	margin-top: 100px;
+}
+.info{
+	margin: 10px;
+	line-height: 25px;
+}
+.whitescreen{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	z-index: 10;
+	margin-top: -100px;
+	display: none;
+}
+
+.closebtn {
+	position: absolute;
+	top: 0;
+	background: #fff;
+	display: none;
+	width: 100%;
+	margin-top: -15px;
+}
+.sometext{
+	margin: 10px;
+	margin-top: 90px;
+	margin-bottom: -20px;
+}
+  </style>
+	<title>Famous People</title>
+</head>
+<body>
+
+<div class="infoshower" id="infoshower">
+	<img class="infoimg" id="infoimg" src="" alt="">
+	<div class="info" id="info">
+		
+	</div>
+</div>
+<div class="whitescreen"></div>
+
+
+	<div class="mui-appbar">
+    <div class="mui--text-title cent" onclick="goBack()"><i class="bi bi-chevron-left"></i> </div><div class="mui--text-title cent" onclick="hider()"><div class="closebtn" id="closebtn"><i class="bi bi-x-lg"></i></div> </div>
+    	
+    
+  </div>
+
+
+<div class="sometext">India is a “Unity in diversity” with every state having its own cultural heritage and tradition yet united. Every place in India differs in customs, religion, food, language, traditions, and philosophy.
+
+Indian culture is thus an amalgamation of cultures of various states which are stitched together. Let us look at the different cultures of 29 states and 7 union territories of India. Lets us move from North to South and discover what each state has in store.</div>
+
+
+
+  <div class="container">
+  	<div class="box" id="myDIV" onclick="one()">
+  		<center>
+	  		<div class="image"><img src="https://www.ritiriwaz.com/wp-content/uploads/2019/06/North-Indian-States.jpg" alt="image"></div>
+	  		<div class="name">North Indian States</div>
+	  	</center>
+  	</div>
+
+  	<div class="box" onclick="two()">
+  		<center>
+	  		<div class="image"><img src="https://www.ritiriwaz.com/wp-content/uploads/2019/06/Central-Indian-States.jpg" alt="image"></div>
+	  		<div class="name">Central Indian States</div>
+	  	</center>
+  	</div>
+
+  	<div class="box" onclick="three()">
+  		<center>
+	  		<div class="image"><img src="https://www.ritiriwaz.com/wp-content/uploads/2019/06/Culture-of-Eastern-Indian-states.jpg" alt="image"></div>
+	  		<div class="name">Eastern Indian states</div>
+	  	</center>
+  	</div>
+
+  	<div class="box" onclick="four()">
+  		<center>
+	  		<div class="image"><img src="https://www.ritiriwaz.com/wp-content/uploads/2019/06/Western-Indian-States.jpg" alt="image"></div>
+	  		<div class="name">Western Indian States
+</div>
+	  	</center>
+  	</div>
+
+  	<div class="box" onclick="five()">
+  		<center>
+	  		<div class="image"><img src="https://www.ritiriwaz.com/wp-content/uploads/2019/06/Southern-Indian-states.jpg" alt="image"></div>
+	  		<div class="name">Southern Indian states</div>
+	  	</center>
+  	</div>
+
+  	
+  </div>
+
+
+
+
+
+   <script>
+
+  	function topFunction() {
+  		document.body.scrollTop = 0; // For Safari
+  		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  		document.getElementById("closebtn").style.display = "block";
+} 
+
+
+  	localStorage.clear()
+  	function goBack() {
+  		window.history.back();
+  	}
+
+  	function hider(){
+  		document.getElementById("infoshower").style.display = "none";
+  		document.getElementById("closebtn").style.display = "none";
+  	}
+
+  	function one(){
+  		var content = `
+
+North Indian states include Jammu and Kashmir, Punjab, Haryana, Himachal Pradesh, Uttar Pradesh, Uttrakhand, and two union territories of Delhi and Chandigarh.
+
+These states have the tallest peak in the world, the Himalayas, and agriculture-rich Indo-Gangetic Plains, these regions have been invaded by Aryans, Huns, Greeks, and Afghans, and their tradition and culture are associated with Indo-Aryan tradition and customs.
+
+Jammu and Kashmir are more prevalent in Muslim culture, Punjab has Punjabi culture while the whole of north India has the influence of the Mughal empire, while the majority are Hindu. The main ethnic groups of North India are Brahmins, Ahirs, Jats, Rajputs, Gurjars, Khatris, Tarkhans, Kambojs, Banias, and Dalits. Hinduism, Islam, and Sikhism.
+
+The architectural heritage of North India includes the Taj Mahal, Harmandir Sahib. North India is home to many sacred religious places like Vaishno Devi, Amarnath, Badrinath, Kedarnath, Haridwar, Varanasi, and Harmandir Sahib in Amritsar.
+
+North India is the birthplace of Kalidasa who has high literacy works. The festivals celebrated in North India vary from state to state, like the people of Punjab celebrate Baisakhi, Gurupurab, Hola Mohalla. Sindhu Darshan and Urs is a Kashmir festival. Phulaich is celebrated in Himachal Pradesh while Dushera of Kullu is also very popular. Teej and Sanjhi are common in Haryana, Lathmar Holi is a unique festival of Uttar Pradesh and Kumbh Mela of Allahabad, Dev Deepawali is a festival of Varanasi. Ramnavami and Janmashtami are festivals of Uttar Pradesh, Mata Murti Ka Mela and Magh Mela are festivals of Uttaranchal.
+
+The clothing of North Indian women is Salwar Kameez, saree, and ghagra choli while men wear kurta Pajama or dhoti and headgear like topi, turban, or pagri. Wheat forms the staple diet of North India as Roti served with Sabzi, Non-vegetarian food is also very common especially in Kashmir.
+
+Hindustani classical music is common in North India which originated in Vedic ritual chants. Different state has its own folk dance like Punjab have Bhangra and Giddha, Kathak in Uttar Pradesh while Rouf of Kashmir and Nati from Himachal Pradesh.
+ `;
+  		document.getElementById("infoshower").style.display = "block";
+  		document.getElementById("infoimg").src = "https://www.ritiriwaz.com/wp-content/uploads/2019/06/North-Indian-States.jpg";
+  		document.getElementById("info").textContent = content;
+  		topFunction();
+  	}
+
+function two(){
+	topFunction();
+  		var content = `Central Indian states are Madhya Pradesh and Chhattisgarh, these states share many linguistic and cultural characteristics with north Indian states and use Hindi as a major language.
+
+Their origin dates back to Iron Age, people of these states settled near rivers like Narmada, Chambal, and Betwa in ancient days. While the Vindhya mountains formed the southern boundary of the Indo-Aryan territory.
+
+Khajuraho temples of Madhya Pradesh the “Heart of India” are famous all over the world, while there are many wildlife sanctuaries or national parks in the area. Sanchi is a Buddhist stupa in Madhya Pradesh and a major tourist place for Buddhists. While Chhattisgarh has “Thirty-Six Forts” which are also a major tourist attraction. The place has many royal forts, overwhelming topography, exciting wildlife, and ancient caves and temples.
+
+The maximum population in Central India is Hindu. Central India has some of the noted Hindustani classical music Gharanas. Madhya Pradesh includes the Maihar Gharana, the Gwalior Gharana, and Senia Gharana.
+
+Tussar or Kosa silk is one distinctive variety of silk developed here which is produced from silkworms harvested in fertile forests. Rice is their staple food and Chhattisgarh is also called “the rice bowl of India”. The biggest festival of central India is Malwa Utsav, while the Khajuraho dance festival, Chethiyagiri Vihara festival is also famous festivals of the area.`;
+  		document.getElementById("infoshower").style.display = "block";
+  		document.getElementById("infoimg").src = "https://www.ritiriwaz.com/wp-content/uploads/2019/06/Central-Indian-States.jpg";
+  		document.getElementById("info").textContent = content;
+  	}
+
+  	function three(){
+  		topFunction();
+  		var content = `
+
+The eastern states are located along the east coast of India near the Bay of Bengal and include states Assam, Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Jharkhand, Bihar, West Bengal, Odisha, Sikkim, and Tripura.
+
+The eastern Indians have spectacular beaches and hilly terrains called the Eastern Ghats. It offers a mixed culture of Hindu, Christianity, Muslim, and Buddhism, While Buddhism is prominent in the region. The hills states in the region like Arunachal Pradesh, Meghalaya, Mizoram, and Nagaland are predominantly inhabited by tribal people with a degree of diversity even within the tribal groups.
+
+The Mongoloid faced people of these regions have different tribes and each tribe has its own custom, dress, and language. The lifestyle varies from tribe to tribe like tribes of hill regions have hunting and fishing as the main occupation, while tea farming and weaving are also the major occupations of people.
+
+Cuisines of East India have rice as their staple food with fish, vegetables, Chicken, Mutton, Duck, Pigeon are some most popular non-veg dishes from the northeast along with a variety of rice beer and pickled bamboo shoots.
+
+The festivals also vary with different tribe people while the major festival of the region is Bihu, Brahmaputra Festival of Assam, Hornbill, and Sekrenyi festival of Nagaland, Torgya Monastery Festival Arunachal Pradesh, Shillong Autumn Festival, Chapchar Kut from Manipur, Ningol Chakouba Festival Manipur and Kharchi Puja from Tripura.
+
+North East India includes 7 contiguous states Arunachal Pradesh, Assam, Meghalaya, Manipur, Mizoram, Nagaland, and Tripura, Hence also known as the Seven Sister States of India, with one brother called Sikkim.
+
+It is one of the most treasured and Eco-friendly areas in India with vast natural resources and a cauldron of different people and cultures. North East is a multicultural and multilingual place. There are over fifty tribes and more than a hundred subtribes. Here language forms neighboring states to have a strong influence.
+
+`;
+  		document.getElementById("infoshower").style.display = "block";
+  		document.getElementById("infoimg").src = "https://www.ritiriwaz.com/wp-content/uploads/2019/06/Culture-of-Eastern-Indian-states.jpg";
+  		document.getElementById("info").textContent = content;
+  	}
+
+  	function four(){
+  		topFunction();
+  		var content = `
+
+Western states of India are Rajasthan, Gujarat, Goa, and Maharastra and these states differ from one another in language, culture, and traditions. Maharastra and Gujarat are the most industrialized states while Rajasthan and Goa are popular as being tourist favorite spots for their historic forts and beaches.
+
+Places of tourist attractions speak basic English, while Hindi is spoken and understood in all states. Rajasthan people speak Rajasthani and Hindi, Maharashtrians speak Marathi, Goans Konkani while people from Gujarat and the union territories speak Gujarati.
+
+In Gujarat you will find mostly vegetarian, Rajasthani food is similar to Gujarati while Maharashtra and Goa are famous for their seafood. Their main religion followed in Hinduism smaller groups is Muslims, Christians, Parsees, and Jains.
+
+Maharashtrian culture is derived from the ancient Maratha Empire and many places in Maharastra are named after its founder Shivaji. The Bollywood industry has a huge impact on the culture and lifestyle of Indians, and the industry is primarily located in Mumbai.
+
+Gujarati culture is a blend of Indian culture and Parsis influence. Goan culture is a blend of Indian and Portuguese cultures. Ganesh Chaturthi is a popular festival in Maharashtra, while the Rann Utsav and Garba festival of Gujarat are popular worldwide.
+`;
+  		document.getElementById("infoshower").style.display = "block";
+  		document.getElementById("infoimg").src = "https://www.ritiriwaz.com/wp-content/uploads/2019/06/Western-Indian-States.jpg";
+  		document.getElementById("info").textContent = content;
+  	}
+
+  	function five(){
+  		topFunction();
+  		var content = `
+
+Indian southern states include Andhra Pradesh, Karnataka, Kerala, Telangana, and Tamil Nadu and are known for their rich cultural heritage. The Dances, colorful fairs and festivals, cuisines, Ayurveda, and natural beauty bring richness to South Indian culture.
+
+The main attraction of South Indian states are beaches, backwaters, Ayurveda, Hill stations, especially Kerala is famous worldwide among tourists for Ayurveda therapy. The main languages spoken are Tamil, Kannada, Malayalam, and Telugu. English is also popularly spoken here and these states bear the highest literacy rate in the country.
+
+People of different religions live in harmony with each other the main religion found here are Hinduism, Buddhism, Christianity, Islam, and Jainism. These fairs and festivals are distinct and famous some of them are the Elephant festival, the Natyanjali dance festival, Hampi festival, Firewalking festival, the Pongal, the Music, and dance festival, and the Nehru Trophy boat race.
+
+The food of South India is spicy and coconut-based with Idli and Dosa with sambhar are very famous while Hyderabadi biryani is renowned. Rice is their staple food and they usually eat food on a banana leaf with their hands. Carnatic music is south India’s classical style of music just as Hindustani music is of the north.
+
+`;
+  		document.getElementById("infoshower").style.display = "block";
+  		document.getElementById("infoimg").src = "https://www.ritiriwaz.com/wp-content/uploads/2019/06/Southern-Indian-states.jpg";
+  		document.getElementById("info").textContent = content;
+  	}
+
+  	
+
+
+
+
+
+  </script>
+<script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
+</body>
+</html>
+

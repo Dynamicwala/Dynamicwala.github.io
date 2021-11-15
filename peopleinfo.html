@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.muicss.com/mui-0.10.3/css/mui.css" />
+  <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.js"></script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <meta charset="utf-8">
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+        font-family: 'Poppins', sans-serif;
+
+  }
+    .mui-appbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    color: #000;
+  }
+    .cent {
+    transform: translateY(50%);
+    margin-left: 10px;
+  }
+  .article{
+    line-height: 25px;
+    margin: 5px;
+  }
+  .title{
+    margin-top: 90px;
+
+  }
+    .caption {
+    font-size: 10px;
+    color: gray;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
+  </style>
+  <title>trending1</title>
+</head>
+<body>
+<div class="mui-appbar">
+    <div class="mui--text-title cent" onclick="goBack()"><i class="bi bi-chevron-left"></i> </div>
+  </div>
+
+
+<div class="title">
+  <h1><b>A lesson for contemporary society</b></h1>
+</div>
+  <div class="article">
+    As the contemporary society delves on the meaning of life amidst the plethora of complex problems it has to negotiate in their daily lives, the life and philosophy of Mahatma Gandhi offer a powerful avenue to discern on what path to tread. Developing understanding of the multi-dimensional thoughts and philosophy of Mahatma Gandhi offers great opportunities to negotiate the challenges of modern day society.
+
+In the backdrop of the materialistic culture that dominates our world, Gandhi’s idea of simple living and strong faith in the power of truth and nonviolence can be the guiding light for a generation which more often seems to getting diverted from the road of values and ethics.
+
+Mahatma Gandhi’s five pillars of nonviolence: respect, understanding, acceptance, appreciation and compassion are basic to our existence. These are simple habits and if we all start trying to nurture these, we could make a difference in the world. By inculcating these habits we can not only be happy ourselves but also make others happy. The Mahatma’s faith in the power of nonviolence can be reflected by this quote of his, “Nonviolence is the first article of my faith. It is also the last article of my creed.”
+
+For the contemporary society, following the ideals of truthfulness is another important challenge. Here again the Mahatma’s prescriptions on the power of truthfulness gives us the direction of what path to follow. On the essence of truth, Gandhi had said, “An error does not become truth by reason of multiplied propagation, nor does truth become error because nobody sees it. Truth stands, even if there be no public support. It is self sustained.” This is an apt reminder for all of us to stand by truth by all means.
+
+One of the greatest lessons we learn from Mahatma Gandhi was his deep faith in the goodness of every individual and his unflinching belief that humanity is proceeding towards well-being. His strong belief on humanity is reflected as, “You must not lose faith in humanity. Humanity is an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty.”
+
+As the world is grappling the challenges of nature and climate change, it is time to revisit Gandhi’s cosmocentric approach to human beings. For Gandhi, we human beings are interconnected to all facets of the universe and cannot live in isolation. He stressed that all lives were sacred and gave immense importance to limit one’s greed. He had rightly said, “The earth, the air, the land and the water are not an inheritance from our fore fathers but on loan from our children. So we have to handover to them at least as it was handed over to us.” Deep understanding of the Mahatma’s cosmocentric approach to human beings are needed more than ever before to ensure contemporary society is able to find sustainable solutions to the ever increasing problem of biodiversity conservation and greed.
+  </div>
+<div class="infotext"></div>
+    <div class="caption"><i class="bi bi-info-circle"></i>sources: gandhi.gov.in</div>
+
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+<script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
+</body>
+</html>
