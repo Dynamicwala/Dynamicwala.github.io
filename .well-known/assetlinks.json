@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "io.github.dynamicwala.twa",
+                     "sha256_cert_fingerprints": ["39:21:84:C5:F3:DB:15:4E:A6:4C:09:A9:49:EC:3C:42:F6:75:DE:78:36:AF:EC:28:85:A0:0A:0F:BE:AD:0C:3F"] }
+      }
+]
