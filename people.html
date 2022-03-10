@@ -76,7 +76,7 @@
 	position: absolute;
 	z-index: 100;
 	background: #fff;
-	height: 300vh;
+	height:;
 	width: 100%;
 	background: #fff;
 	margin-top: -150px;
@@ -154,7 +154,7 @@
 	<img class="infoimg" id="infoimg" src="" alt="">
 	<zero-md src="md/gandhi.md" id="info" class="info"></zero-md>
 </div>
-<div class="whitescreen"></div>
+<div class="whitescreen" id="whitescreen"></div>
 
 
 	<div class="mui-appbar">
@@ -285,6 +285,7 @@
   		document.body.scrollTop = 0; // For Safari
   		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   		document.getElementById("closebtn").style.display = "block";
+		document.getElementById("whitescreen").style.display = "block";
 		  function jsmediaFunction(x) {
   if (x.matches) { // If media query matches
     document.getElementById("infoshower").style.display = "block";
@@ -307,6 +308,7 @@ x.addListener(jsmediaFunction);
   	function hider(){
   		document.getElementById("infoshower").style.display = "none";
   		document.getElementById("closebtn").style.display = "none";
+		document.getElementById("whitescreen").style.display = "none";
   	}
 
   	function one(){
