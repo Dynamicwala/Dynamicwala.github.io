@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 	<!-- google fonts over -->
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
 	<style>
 	* {
 		padding: 0;
@@ -29,7 +30,6 @@
 	}
 	
 	.cent {
-		transform: translateY(50%);
 		margin-left: 10px;
 	}
 	
@@ -44,7 +44,6 @@
 	
 	.box {
 		border-radius: 20px;
-		background: red;
 		width: 150px;
 		height: 70px;
 		position: relative;
@@ -52,7 +51,8 @@
 		align-items: center;
 		display: flex;
 		min-height: 100px;
-		background-image: linear-gradient(to right top, #ff62fc, #e24ee6, #c53ad1, #a923bc, #8e04a7);
+		background: rgb(253,145,45);
+background: linear-gradient(95deg, rgba(253,145,45,1) 30%, rgba(255,195,140,1) 100%);
 		margin: 10px;
 		margin-bottom: 40px;
 	}
@@ -139,6 +139,16 @@
 	margin-top: -100px;
 	display: none;
 }
+
+
+.input:focus, input:hover {
+ outline: none;
+ border-color: rgba(253, 146, 45,0.4);
+ background-color: #fff;
+ box-shadow: 0 0 0 4px rgb(253 146 45 / 10%);
+}
+
+
 	</style>
 	<title>Famous People</title>
 </head>
@@ -151,12 +161,19 @@
 	</div>
 	<div class="whitescreen" id="whitescreen"></div>
 	<div class="mui-appbar">
-		<div class="mui--text-title cent" onclick="goBack()"><i class="bi bi-chevron-left"></i> </div>
-		<div class="mui--text-title cent" onclick="hider()">
-			<div class="closebtn" id="closebtn"><i class="bi bi-x-lg"></i></div>
-		</div>
+		<table width="100%">
+    <tr style="vertical-align:middle;">
+      <td class="mui--appbar-height"><div class="mui--text-title cent" onclick="goBack()"><i class="bi bi-chevron-left"></i> </div><div class="mui--text-title cent" onclick="hider()"><div class="closebtn" id="closebtn"><i class="bi bi-x-lg"></i></div> </div></td>
+
+
+      <td class="mui--appbar-height" align="right"><div class="group">
+  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+  <input placeholder="Search" type="search" id="myInput" onkeyup="searchfun()" class="input">
+</div></td>
+    </tr>
+  </table>
 	</div>
-	<div class="container">
+	<div class="container" id="myUL">
 		<div class="box" id="myDIV" onclick="one()">
 			<center>
 				<div class="image"><img src="tajmahal.webp" alt="image"></div>
@@ -631,6 +648,11 @@ Built In: 1921
 		document.getElementById("apnaframe").src = "https://momento360.com/e/u/2e0c4b6b7f3c467b9fa0e7a8e269730b?utm_campaign=embed&utm_source=other&heading=2.7&pitch=2.2&field-of-view=75&size=medium";
 	}
 	</script>
+
+
+<script type="text/javascript" src="mains.js"></script>
+
+
 <script type="module">
       import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
       const el = document.createElement('pwa-update');
