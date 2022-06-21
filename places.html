@@ -122,13 +122,14 @@ background: linear-gradient(95deg, rgba(253,145,45,1) 30%, rgba(255,195,140,1) 1
 		display: none;
 	}
 	
-	.closebtn {
-		position: absolute;
-		top: 0;
-		background: #fff;
-		display: none;
-		width: 100%;
-		margin-top: -15px;
+	.closebtn {	position: absolute;
+	top: 50;
+	bottom: 50;
+	transform: translateY(-100%);
+	background: #fff;
+	display: none;
+	width: 20%;
+
 	}
 	.whitescreen{
 	position: fixed;
@@ -148,7 +149,15 @@ background: linear-gradient(95deg, rgba(253,145,45,1) 30%, rgba(255,195,140,1) 1
  box-shadow: 0 0 0 4px rgb(253 146 45 / 10%);
 }
 
+@media screen and (max-width: 800px){
+	.infoimg{
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+		margin-left: 0px;
 
+
+	}}
 	</style>
 	<title>Famous People</title>
 </head>
