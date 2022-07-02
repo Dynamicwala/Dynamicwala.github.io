@@ -170,7 +170,12 @@
   	</div>
 
 
-
+	  <div class="box" onclick="fifteen()">
+		<center>
+			<div class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Atal_Bihari_Vajpayee_tribute_image_%28cropped%29.jpg/220px-Atal_Bihari_Vajpayee_tribute_image_%28cropped%29.jpg" alt="image"></div>
+			<div class="name">Atal Bihari Vajpayee</div>
+		</center>
+	</div>
 
   </div>
 
@@ -299,8 +304,12 @@ function two(){
   	}
 
 
-
-
+	  function fifteen(){
+		document.getElementById("infoshower").style.display = "flex";
+  		document.getElementById("infoimg").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Atal_Bihari_Vajpayee_tribute_image_%28cropped%29.jpg/220px-Atal_Bihari_Vajpayee_tribute_image_%28cropped%29.jpg";
+		  document.getElementById("info").src = "peoplemd/fifteen.md";		  topFunction();
+	  }
+	  
 
   </script>
 
