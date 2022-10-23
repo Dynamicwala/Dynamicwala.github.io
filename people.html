@@ -68,7 +68,7 @@
 
 
   <div class="container" id="myUL">
-  	<div class="box" id="myDIV" onclick="one()">
+  	<div class="box" id="myDIV" onclick="contentshower(peoplemd/gandhi.md , mk.jpg)">
   		<center>
 	  		<div class="image"><img src="mk.jpg" alt="image"></div>
 	  		<div class="name">Mahatma Gandhi</div>
@@ -228,7 +228,12 @@ x.addListener(jsmediaFunction);
   		document.getElementById("closebtn").style.display = "none";
 		document.getElementById("whitescreen").style.display = "none";
   	}
-
+	function contentshower(mdurl, imgurl){
+		document.getElementById("infoshower").style.display = "flex";
+  		document.getElementById("infoimg").src = imgurl;
+  		document.getElementById("info").src = mdurl;
+  		topFunction();
+	}
   	function one(){
   		document.getElementById("infoshower").style.display = "flex";
   		document.getElementById("infoimg").src = "mk.jpg";
