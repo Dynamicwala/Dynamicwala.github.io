@@ -1,0 +1,1 @@
+Vikram Ambalal Sarabhai (12 August 1919 – 30 December 1971) was an Indian physicist and astronomer who initiated space research and helped develop nuclear power in India. He was honoured with Padma Bhushan in 1966 and the Padma Vibhushan (posthumously) in 1972. He is internationally regarded as the Father of the Indian Space Program.
